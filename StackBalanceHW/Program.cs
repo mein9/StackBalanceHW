@@ -4,8 +4,13 @@
     {
         public static void Main(string[] args)
         {
-            string expression = "{[(2+3)*(5/2)]}"; // Example expression
-            bool result = IsBalanced(expression);
+            Console.WriteLine("Enter an expression to check if it's balanced, or press Enter to use the default example:");
+            string input = Console.ReadLine();
+
+            string expression = string.IsNullOrEmpty(input) ? "{[(2+3)*(5/2)]}" : input;  // Example expression or user input decided here
+
+            bool result = IsBalanced(expression); // check if balanced
+
             Console.WriteLine($"Is the expression \"{expression}\" balanced? {result}");
         }
 
